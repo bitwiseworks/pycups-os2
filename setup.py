@@ -26,7 +26,7 @@ CUPS project.
 >>> conn = cups.Connection ()
 >>> printers = conn.getPrinters ()
 >>> for printer in printers:
-...     print printer, printers[printer]["device-uri"]
+    ...     print printer, printers[printer]["device-uri"]
 ...
 HP ipp://192.168.1.1:631/printers/HP
 duplex ipp://192.168.1.1:631/printers/duplex
@@ -40,7 +40,7 @@ VERSION="2.0.1"
 libraries=["cups"]
 
 if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
-	libraries.append ("iconv")
+    libraries.append ("iconv")
 
 setup (name="pycups",
        version=VERSION,
@@ -51,15 +51,15 @@ setup (name="pycups",
        url="https://github.com/zdohnal/pycups",
        download_url="https://github.com/zdohnal/pycups/releases",
        classifiers=[
-		"Intended Audience :: Developers",
-		"Topic :: Software Development :: Libraries :: Python Modules",
-		"License :: OSI Approved :: GNU General Public License (GPL)",
-		"Development Status :: 5 - Production/Stable",
-		"Operating System :: Unix",
-		"Programming Language :: C",
-		"Programming Language :: Python",
-		"Programming Language :: Python :: 3",
-		],
+           "Intended Audience :: Developers",
+           "Topic :: Software Development :: Libraries :: Python Modules",
+           "License :: OSI Approved :: GNU General Public License (GPL)",
+           "Development Status :: 5 - Production/Stable",
+           "Operating System :: Unix",
+           "Programming Language :: C",
+           "Programming Language :: Python",
+           "Programming Language :: Python :: 3",
+           ],
        license="GPLv2+",
        ext_modules=[Extension("cups",
                               ["cupsmodule.c", "cupsconnection.c",
