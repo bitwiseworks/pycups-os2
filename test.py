@@ -21,7 +21,7 @@ def test_cups_module ():
         print ("Putting cupsd.conf")
         conn.putFile ("/admin/conf/cupsd.conf", "cupsd.conf")
 
-    if len(printers) == 0
+    if len(printers) == 0:
         print ("No permanent printers installed.")
         return
 
