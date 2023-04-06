@@ -11,7 +11,21 @@ def callback (prompt):
 def test_cups_module ():
     cups.setUser ("root")
     cups.setPasswordCB (callback)
-    conn = cups.Connection ()
+    try:
+        conn = cups.Connection ()
+    except RuntimeError as er:
+        print ("Couldn't get a connection to local CUPS server - {}"
+               " - is CUPS running?".format(er))
+        return
+
+    # get destinations - temporary and permanent printers
+    dests = list(conn.getDests ().keys ())
+
+    if len(dests) == 0:
+        print ("No printers found, exiting.")
+        return
+
+    # get permanent printers
     printers = list(conn.getPrinters ().keys ())
 
     if 0:
@@ -21,9 +35,7 @@ def test_cups_module ():
         print ("Putting cupsd.conf")
         conn.putFile ("/admin/conf/cupsd.conf", "cupsd.conf")
 
-    if len(printers) == 0:
-        print ("No permanent printers installed.")
-        return
+    assert len(printers) > 0
 
     print ("Getting PPD for %s" % printers[len (printers) - 1])
     f = conn.getPPD (printers[len (printers) - 1])
