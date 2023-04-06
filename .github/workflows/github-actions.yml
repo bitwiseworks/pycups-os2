@@ -16,7 +16,7 @@ jobs:
     - name: update build env
       run: sudo apt-get update --fix-missing -y
     - name: install prerequisities
-      run: sudo apt-get install libcups2-dev python3-dev gcc python3-setupttools
+      run: sudo apt-get install libcups2-dev python3-dev gcc python3-setuptools
     - name: make
       run: make
     - name: sudo make install
