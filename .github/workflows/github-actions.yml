@@ -24,7 +24,7 @@ jobs:
     - name: make dist
       run: make dist
     - name: install cups and ippeveprinter for testing
-      run: sudo apt-get install cups ippeveprinter
+      run: sudo apt-get install cups cups-ipp-utils
     - name: start cupsd - needed for testing
       run: sudo systemctl start cups
     - name: start ippeveprinter to simulate a driverless printer
