@@ -3866,9 +3866,15 @@ Connection_printTestPage (Connection *self, PyObject *args, PyObject *kwds)
 	  break;
       }
     } else {
+#ifndef __OS2__
       const char *const dirs[] = { "/usr/share/cups",
 				   "/usr/local/share/cups",
 				   NULL };
+#else
+      const char *const dirs[] = { "@unixroot/usr/share/cups",
+				   "@unixroot/usr/local/share/cups",
+				   NULL };
+#endif
       int found = 0;
       int i;
       for (i = 0; (datadir = dirs[i]) != NULL; i++) {

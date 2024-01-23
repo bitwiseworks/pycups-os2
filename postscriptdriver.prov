@@ -189,9 +189,15 @@ class DrvDriver(PPDDriver):
         tmpdir = os.environ.get ("TMPDIR", "/tmp") + os.path.sep
         outputdir = tempfile.mkdtemp (dir=tmpdir)
         
-        argv = [ "ppdc",
+        if os.name != "os2":
+            argv = [ "ppdc",
                  "-d", outputdir,
                  "-I", "/usr/share/cups/ppdc",
+                 self.drv ]
+        else:
+            argv = [ "ppdc",
+                 "-d", outputdir,
+                 "-I", "/@unixroot/usr/share/cups/ppdc",
                  self.drv ]
 
         signal.alarm (60)
