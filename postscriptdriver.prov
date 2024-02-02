@@ -28,7 +28,7 @@ except:
 from getopt import getopt
 import errno
 import os
-import posix
+#import posix
 import re
 import shlex
 import signal
@@ -161,7 +161,7 @@ class DynamicDriver(Driver):
             (stdout, stderr) = p.communicate ()
             signal.alarm (0)
         except TimedOut:
-            posix.kill (p.pid, signal.SIGKILL)
+            os.kill (p.pid, signal.SIGKILL)
             raise
 
         if stderr:
@@ -214,7 +214,7 @@ class DrvDriver(PPDDriver):
             (stdout, stderr) = p.communicate ()
             signal.alarm (0)
         except TimedOut:
-            posix.kill (p.pid, signal.SIGKILL)
+            os.kill (p.pid, signal.SIGKILL)
             raise
 
         for (dirpath, dirnames, filenames) in os.walk (outputdir,
