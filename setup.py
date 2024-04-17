@@ -64,7 +64,7 @@ setup (name="pycups",
        install_requires=[
            'gcc',
            'python3-devel',
-       ]
+       ],
        ext_modules=[Extension("cups",
                               ["cupsmodule.c", "cupsconnection.c",
                                "cupsppd.c", "cupsipp.c"],
