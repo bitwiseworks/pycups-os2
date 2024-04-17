@@ -10,6 +10,7 @@ New in 2.0.2:
 - define PY_SSIZE_T_CLEAN in cupsipp.h - fixes traceback during IPPRequest.writeIO
   with Python 3.10
 - fix the test.py when there is no printer installed (#46)
+- Use PyObject_Call() instead of deprecated PyEval
 
 New in 2.0.1:
 * pypi required .tar.gz
