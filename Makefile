@@ -26,7 +26,7 @@ doczip:	doc
 	cd html && zip ../cups-html.zip *
 
 clean:
-	-rm -rf build cups.so html *.pyc *~
+	-rm -rf build cups.so html *.pyc *~ __pycache__
 
 dist:
 	$(PYTHON) setup.py sdist $(SDIST_ARGS)
