@@ -61,6 +61,10 @@ setup (name="pycups",
            "Programming Language :: Python :: 3",
            ],
        license="GPLv2+",
+       install_requires=[
+           'gcc',
+           'python3-devel',
+       ]
        ext_modules=[Extension("cups",
                               ["cupsmodule.c", "cupsconnection.c",
                                "cupsppd.c", "cupsipp.c"],
