@@ -36,7 +36,7 @@ EPSON-Stylus-D78 usb://EPSON/Stylus%20D78
 
 from distutils.core import setup, Extension
 import sys
-VERSION="2.0.3"
+VERSION="2.0.4"
 libraries=["cups"]
 
 if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
@@ -61,10 +61,6 @@ setup (name="pycups",
            "Programming Language :: Python :: 3",
            ],
        license="GPLv2+",
-       install_requires=[
-           'gcc',
-           'python3-devel',
-       ],
        ext_modules=[Extension("cups",
                               ["cupsmodule.c", "cupsconnection.c",
                                "cupsppd.c", "cupsipp.c"],
