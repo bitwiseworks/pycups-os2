@@ -36,7 +36,7 @@ EPSON-Stylus-D78 usb://EPSON/Stylus%20D78
 
 from distutils.core import setup, Extension
 import sys
-VERSION="2.0.1"
+VERSION="2.0.4"
 libraries=["cups"]
 
 if sys.platform == "darwin" or sys.platform.startswith("freebsd"):
@@ -48,8 +48,8 @@ setup (name="pycups",
        long_description=__doc__,
        maintainer="Zdenek Dohnal",
        maintainer_email="zdohnal@redhat.com",
-       url="https://github.com/zdohnal/pycups",
-       download_url="https://github.com/zdohnal/pycups/releases",
+       url="https://github.com/OpenPrinting/pycups",
+       download_url="https://github.com/OpenPrinting/pycups/releases",
        classifiers=[
            "Intended Audience :: Developers",
            "Topic :: Software Development :: Libraries :: Python Modules",
